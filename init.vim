@@ -40,6 +40,10 @@ Plug 'BurntSushi/ripgrep'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+" tpope surround for easy surround edits
+Plug 'tpope/vim-surround'
+" tpope vim-commentary for easy commenting
+Plug 'tpope/vim-commentary'
 call plug#end()
 
 " enable NERDTreeFocus to show hidden files/folders
