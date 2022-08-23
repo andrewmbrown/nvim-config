@@ -58,6 +58,8 @@ nmap s ys
 
 filetype plugin indent on
 syntax on
+"enable scrolling with mouse a
+set mouse=a
 set background=dark
 set number
 set nowrap
