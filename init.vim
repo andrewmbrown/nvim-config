@@ -1,8 +1,8 @@
 " NVIM Configuration File
 " Created By: Andrew Brown
 " Created On: Aug 9, 2022
-" Description: This is the configuration file for the NVIM
-"  I use vim-plug to manage plugins, might migrate to all lua soon
+" Description: nvim config file
+" I use vim-plug to manage plugins, might migrate to all lua soon
 " to create this directory (using vim-plug), run the following command:
 " curl -fLO $HOME/.conf/nvim/autoload/plug.vim --create-dirs \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 " ---------------------------------------------------------------------------------------------------------------------
@@ -53,6 +53,8 @@ colorscheme gruvbox
 
 " set control n to nerdtree focus
 map <silent> <C-n> :NERDTreeFocus <CR>
+" for surround map s to surround
+nmap s ys 
 
 filetype plugin indent on
 syntax on
