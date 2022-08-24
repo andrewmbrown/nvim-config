@@ -54,8 +54,8 @@ let NERDTreeShowHidden=1
 " set colorscheme
 colorscheme gruvbox
 
-" set control n to nerdtree focus
-map <silent> <C-n> :NERDTreeFocus <CR>
+" set control n to nerdtree focus in current directory
+map <C-n> :NERDTreeToggle %<CR>
 " for surround map s to surround
 nmap s ys 
 
@@ -65,24 +65,30 @@ nmap s ys
 nnoremap <silent>    <C-h> <Cmd>BufferPrevious<CR>
 nnoremap <silent>    <C-l> <Cmd>BufferNext<CR>
 " Re-order to previous/next
-nnoremap <silent>    <A-<> <Cmd>BufferMovePrevious<CR>
-nnoremap <silent>    <A->> <Cmd>BufferMoveNext<CR>
+nnoremap <silent>    <C-<> <Cmd>BufferMovePrevious<CR>
+nnoremap <silent>    <C->> <Cmd>BufferMoveNext<CR>
 " Goto buffer in position...
-nnoremap <silent>    <A-1> <Cmd>BufferGoto 1<CR>
-nnoremap <silent>    <A-2> <Cmd>BufferGoto 2<CR>
-nnoremap <silent>    <A-3> <Cmd>BufferGoto 3<CR>
-nnoremap <silent>    <A-4> <Cmd>BufferGoto 4<CR>
-nnoremap <silent>    <A-5> <Cmd>BufferGoto 6<CR>
-nnoremap <silent>    <A-6> <Cmd>BufferGoto 6<CR>
-nnoremap <silent>    <A-7> <Cmd>BufferGoto 7<CR>
-nnoremap <silent>    <A-8> <Cmd>BufferGoto 8<CR>
-nnoremap <silent>    <A-9> <Cmd>BufferGoto 9<CR>
-nnoremap <silent>    <A-0> <Cmd>BufferLast<CR>
+nnoremap <silent>    <C-1> <Cmd>BufferGoto 1<CR>
+nnoremap <silent>    <C-2> <Cmd>BufferGoto 2<CR>
+nnoremap <silent>    <C-3> <Cmd>BufferGoto 3<CR>
+nnoremap <silent>    <C-4> <Cmd>BufferGoto 4<CR>
+nnoremap <silent>    <C-5> <Cmd>BufferGoto 6<CR>
+nnoremap <silent>    <C-6> <Cmd>BufferGoto 6<CR>
+nnoremap <silent>    <C-7> <Cmd>BufferGoto 7<CR>
+nnoremap <silent>    <C-8> <Cmd>BufferGoto 8<CR>
+nnoremap <silent>    <C-9> <Cmd>BufferGoto 9<CR>
+nnoremap <silent>    <C-0> <Cmd>BufferLast<CR>
 " Pin/unpin buffer
-nnoremap <silent>    <A-p> <Cmd>BufferPin<CR>
+nnoremap <silent>    <C-p> <Cmd>BufferPin<CR>
 
+" Change window mapping from C-w to C-m
+" terminal must enter normal mode before switching, map it easier
+tnoremap <C-W>h <C-\><C-n><C-W>h
+tnoremap <C-W>l <C-\><C-n><C-W>l
+tnoremap <C-W>j <C-\><C-n><C-W>j
+tnoremap <C-W>k <C-\><C-n><C-W>k
 " Close buffer
-nnoremap <silent>    <A-c> <Cmd>BufferClose<CR>
+nnoremap <silent>    <C-m> <Cmd>BufferClose<CR>
 " Wipeout buffer
 "                          :BufferWipeout
 " Close commands
@@ -91,13 +97,21 @@ nnoremap <silent>    <A-c> <Cmd>BufferClose<CR>
 "                          :BufferCloseAllButCurrentOrPinned
 "                          :BufferCloseBuffersLeft
 "                          :BufferCloseBuffersRight
-" Magic buffer-picking mode
-nnoremap <silent> <C-p>    <Cmd>BufferPick<CR>
 " Sort automatically by...
 nnoremap <silent> <Space>bb <Cmd>BufferOrderByBufferNumber<CR>
 nnoremap <silent> <Space>bd <Cmd>BufferOrderByDirectory<CR>
 nnoremap <silent> <Space>bl <Cmd>BufferOrderByLanguage<CR>
 nnoremap <silent> <Space>bw <Cmd>BufferOrderByWindowNumber<CR>
+
+" Float term open like vscode - small terminal at bottom of screen
+nnoremap <silent> <C-`> <Cmd>:FloatermNew --height=0.2 --wintype=split --name=floaterm1 --position=botright --autoclose=0<CR>
+" Regular FloatTerm
+nnoremap <silent> <C-t> <Cmd>:FloatermNew --height=0.8 --width=0.6 --wintype=float --position=center --autoclose=0<CR>
+
+
+
+" shortcut for fuzzyfinder
+nnoremap <C-f> <Cmd>:Files .<CR>
 
 filetype plugin indent on
 syntax on
