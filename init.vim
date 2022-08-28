@@ -106,9 +106,19 @@ nnoremap <silent> <Space>bw <Cmd>BufferOrderByWindowNumber<CR>
 " Float term open like vscode - small terminal at bottom of screen
 nnoremap <silent> <C-t> <Cmd>:FloatermNew --height=0.2 --wintype=split --name=floaterm1 --position=botright --autoclose=0<CR>
 " Regular FloatTerm
-nnoremap <silent> <C-\><C-t> <Cmd>:FloatermNew --height=0.8 --width=0.6 --wintype=float --position=center --autoclose=0<CR>
+nnoremap <silent> <C-\><C-t> <Cmd>:FloatermNew --height=1.0 --width=0.8 --wintype=float --position=center --autoclose=0<CR>
 
+" Allow Coc to autocomplete with tab
+" use <tab> for trigger completion and navigate to the next complete item
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
 
+inoremap <silent><expr> <Tab>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
 
 " shortcut for fuzzyfinder
 nnoremap <C-f> <Cmd>:Files .<CR>
@@ -123,8 +133,9 @@ set number
 set nowrap
 set smartcase
 set hlsearch
-set tabstop=4 softtabstop=4
+set tabstop=4
+set softtabstop=4
 set expandtab
-set smartindent
 set relativenumber
+set shiftwidth=4
 
