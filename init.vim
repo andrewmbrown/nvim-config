@@ -121,7 +121,11 @@ inoremap <silent><expr> <Tab>
       \ coc#refresh()
 
 " shortcut for fuzzyfinder
+" Local find in current project directory
 nnoremap <C-f> <Cmd>:Files .<CR>
+" Global find in home directory
+nnoremap <C-\><C-f> <Cmd>:Files ~<CR>
+
 
 filetype plugin indent on
 syntax on
