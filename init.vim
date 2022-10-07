@@ -135,7 +135,8 @@ set encoding=utf-8
 set background=dark
 set number
 set nowrap
-set smartcase
+"set smartcase
+set ignorecase
 set hlsearch
 set tabstop=4
 set softtabstop=4
