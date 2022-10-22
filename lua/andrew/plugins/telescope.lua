@@ -1,15 +1,13 @@
 local telescope_setup, telescope = pcall(require, "telescope")
 if not telescope_setup then
-    print("error setting up telescope")
-    return
+	return
 end
 
-local actions_setup, actions = pcall(require, "telescope")
+-- import telescope actions safely
+local actions_setup, actions = pcall(require, "telescope.actions")
 if not actions_setup then
-    print("error setting up telescope")
-    return
+	return
 end
-
 -- setup and keymaps
 -- configure telescope
 telescope.setup({
@@ -25,5 +23,4 @@ telescope.setup({
 	},
 })
 
--- use fuzzy finder to speed up telescope
 telescope.load_extension("fzf")
