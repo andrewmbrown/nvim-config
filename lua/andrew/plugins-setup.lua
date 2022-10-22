@@ -40,6 +40,12 @@ return packer.startup(function(use)
     use("christoomey/vim-tmux-navigator")
     -- window manager for maximizing and min
     use("szw/vim-maximizer")
+    -- nifty surround
+    use("tpope/vim-surround")
+    -- more appropriate copy/paste without highlight
+    use("vim-scripts/ReplaceWithRegister")
+    --nice commenting
+    use("numToStr/Comment.nvim")
 
 	if packer_bootstrap then
 		require("packer").sync()

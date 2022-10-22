@@ -74,6 +74,16 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["Comment.nvim"] = {
+    loaded = true,
+    path = "/Users/andrewbrown/.local/share/nvim/site/pack/packer/start/Comment.nvim",
+    url = "https://github.com/numToStr/Comment.nvim"
+  },
+  ReplaceWithRegister = {
+    loaded = true,
+    path = "/Users/andrewbrown/.local/share/nvim/site/pack/packer/start/ReplaceWithRegister",
+    url = "https://github.com/vim-scripts/ReplaceWithRegister"
+  },
   gruvbox = {
     loaded = true,
     path = "/Users/andrewbrown/.local/share/nvim/site/pack/packer/start/gruvbox",
@@ -88,6 +98,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/andrewbrown/.local/share/nvim/site/pack/packer/start/vim-maximizer",
     url = "https://github.com/szw/vim-maximizer"
+  },
+  ["vim-surround"] = {
+    loaded = true,
+    path = "/Users/andrewbrown/.local/share/nvim/site/pack/packer/start/vim-surround",
+    url = "https://github.com/tpope/vim-surround"
   },
   ["vim-tmux-navigator"] = {
     loaded = true,
