@@ -50,7 +50,15 @@ return packer.startup(function(use)
     use("numToStr/Comment.nvim")
     -- file explorer
     use("nvim-tree/nvim-tree.lua")
-
+    -- icons
+    use("kyazdani42/nvim-web-devicons")
+    -- statusline
+    use("nvim-lualine/lualine.nvim")
+    -- fuzzy finder with telescope!
+    -- dependency for telescope, first is repo name, second is option
+    use({"nvim-telescope/telescope-fzf-native.nvim", run="make"})
+    -- specific version of telescope
+    use({"nvim-telescope/telescope.nvim", branch="0.1.x"})
 	if packer_bootstrap then
 		require("packer").sync()
 	end	

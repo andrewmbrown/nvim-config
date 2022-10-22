@@ -8,6 +8,9 @@ end
 vim.g.loaded = 1
 vim.g.loaded_netrwPlugin = 1
 
+-- change color of highlights done by nvimtree
+vim.cmd([[ highlight NvimTreeIndentMarker guifg=#3FC5FF ]])
+
 nvimtree.setup({
     renderer = {
         icons = {
@@ -18,6 +21,13 @@ nvimtree.setup({
                 },
             },
         },
-    },v 
+    },
+    actions = {
+        open_file = {
+            window_picker = {
+                enable = false,
+            },
+        },
+    },
 })
 

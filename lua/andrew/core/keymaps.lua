@@ -12,6 +12,8 @@ keymap.set("n", "x", '"_x')
 
 -- plugin keymaps
 -- vim-maximizer
---
 keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>")
+
+-- nvim-tree
+keymap.set("n", "<C-n>", ":NvimTreeToggle<CR>")
 
