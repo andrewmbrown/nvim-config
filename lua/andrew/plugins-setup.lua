@@ -34,6 +34,8 @@ return packer.startup(function(use)
 
     -- packer itself
     use("wbthomason/packer.nvim")
+    -- lua functions that other plugins use
+    use("nvim-lua/plenary.nvim")
     -- colorscheme
     use("morhetz/gruvbox")
     -- tmux & split window navigation
@@ -44,8 +46,10 @@ return packer.startup(function(use)
     use("tpope/vim-surround")
     -- more appropriate copy/paste without highlight
     use("vim-scripts/ReplaceWithRegister")
-    --nice commenting
+    -- nice block commenting
     use("numToStr/Comment.nvim")
+    -- file explorer
+    use("nvim-tree/nvim-tree.lua")
 
 	if packer_bootstrap then
 		require("packer").sync()
