@@ -1,4 +1,6 @@
 -- using packer.nvim as a plugin manager
+-- when installing new packages (or removing old ones)
+-- :w write this file to have packer auto manage
 -- auto install packer if not installed
 local ensure_packer = function()
 	local fn = vim.fn
@@ -32,6 +34,12 @@ return packer.startup(function(use)
 
     -- packer itself
     use("wbthomason/packer.nvim")
+    -- colorscheme
+    use("morhetz/gruvbox")
+    -- tmux & split window navigation
+    use("christoomey/vim-tmux-navigator")
+    -- window manager for maximizing and min
+    use("szw/vim-maximizer")
 
 	if packer_bootstrap then
 		require("packer").sync()
