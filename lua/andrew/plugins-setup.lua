@@ -59,6 +59,21 @@ return packer.startup(function(use)
     use({"nvim-telescope/telescope-fzf-native.nvim", run="make"})
     -- specific version of telescope
     use({"nvim-telescope/telescope.nvim", branch="0.1.x"})
+    --autocompletion
+    -- plugin for autocompletion
+    use("hrsh7th/nvim-cmp")
+    -- source, allows cmp to recomend text from buffer
+    use("hrsh7th/cmp-buffer")
+    -- source, for file paths to recommend
+    use("hrsh7th/cmp-path")
+
+    -- snippets
+    -- snippet engine
+    use("L3MON4D3/LuaSnip")
+    -- source, nvim cmp for autocompletion
+    use("saadparwaiz1/cmp_luasnip")
+    -- collection of useful snippets for various langs
+    use("rafamadriz/friendly-snippets")
 	if packer_bootstrap then
 		require("packer").sync()
 	end	
