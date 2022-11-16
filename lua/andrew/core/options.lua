@@ -34,3 +34,6 @@ opt.splitbelow = true
 
 -- consider words with dashes as "words"
 opt.iskeyword:append("-")
+
+-- enable mouse usage
+vim.o['mouse'] = 'a'
