@@ -35,4 +35,7 @@ treesitter.setup({
 	},
 	-- auto install above language parsers
 	auto_install = true,
+    auto_close = 1,
+    gitignore = 1
+
 })

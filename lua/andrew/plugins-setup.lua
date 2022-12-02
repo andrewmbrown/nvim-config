@@ -105,6 +105,12 @@ return packer.startup(function(use)
 
     -- git integration signs plugin
     use("lewis6991/gitsigns.nvim")
+    
+    -- toggle term for embedded terminal and floating terminal
+    use {"akinsho/toggleterm.nvim", tag = '*', config = function()
+      require("toggleterm").setup()
+    end}
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end	
